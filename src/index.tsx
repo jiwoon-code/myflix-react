@@ -63,7 +63,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   color:black;
   line-height: 1.2;
-  background:linear-gradient(135deg,rgb(238, 0, 153),rgb(221, 0, 238));
+ 
 }
 a {
   text-decoration:none;
