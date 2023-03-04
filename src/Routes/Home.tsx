@@ -67,9 +67,51 @@ const Box = styled(motion.div)<{ bgPhoto: string }>`
   background-image: url(${(props) => props.bgPhoto});
   background-size: cover;
   background-position: center center;
-  height: 180px;
+  height: 170px;
   margin-bottom: 20px;
+  &:first-child {
+    transform-origin: center left;
+  }
+  &:last-child {
+    transform-origin: center right;
+  }
 `;
+const boxVariants = {
+  normal: {
+    scale: 1,
+  },
+  hover: {
+    scale: 1.3,
+    y: -30,
+    transition: {
+      duration: 0.3,
+      delay: 0.5,
+      type: "twwen",
+    },
+  },
+};
+const Info = styled(motion.div)`
+  padding: 10px;
+  background-color: ${(props) => props.theme.black.lighter};
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  h4 {
+    text-align: center;
+    font-size: 15px;
+  }
+`;
+const infoVariants = {
+  hover: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      delay: 0.5,
+      type: "twwen",
+    },
+  },
+};
 
 const offset = 6;
 
@@ -118,10 +160,14 @@ function Home() {
                   .slice(offset * index, offset * index + offset)
                   .map((movie) => (
                     <Box
+                      variants={boxVariants}
+                      whileHover="hover"
                       key={movie.id}
                       bgPhoto={makeImgPath(movie.backdrop_path, "w500")}
                     >
-                      {movie.title}
+                      <Info variants={infoVariants}>
+                        <h4>{movie.title}</h4>
+                      </Info>
                     </Box>
                   ))}
               </Row>
