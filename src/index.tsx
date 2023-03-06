@@ -70,9 +70,7 @@ a {
   text-decoration:none;
   color:inherit;
 }
-::-webkit-scrollbar {
-display: none;
-}
+
 `;
 
 const client = new QueryClient();

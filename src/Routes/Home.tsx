@@ -228,6 +228,7 @@ function Home() {
               </Row>
             </AnimatePresence>
           </Slider>
+
           <AnimatePresence>
             {bigMovieMatch ? (
               <>

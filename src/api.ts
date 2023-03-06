@@ -20,8 +20,73 @@ export interface IGetMoviesResult {
   total_results: number;
 }
 
+interface ITopRated {
+  id: number;
+  backdrop_path: string;
+  poster_path: string;
+  title: string;
+  overview: string;
+  vote_average: number;
+}
+export interface ITopRatedResult {
+  page: number;
+  results: ITopRated[];
+  total_pages: number;
+  total_results: number;
+}
+
+interface IUpComming {
+  id: number;
+  backdrop_path: string;
+  poster_path: string;
+  title: string;
+  overview: string;
+}
+export interface IUpCommingResult {
+  dates: {
+    maximum: string;
+    minimum: string;
+  };
+  page: number;
+  results: IUpComming[];
+  total_pages: number;
+  total_results: number;
+}
+
+interface ITvShow {
+  id: number;
+  backdrop_path: string;
+  poster_path: string;
+  title: string;
+  overview: string;
+}
+export interface ITvShowResult {
+  page: number;
+  results: ITvShow[];
+  total_pages: number;
+  total_results: number;
+}
+
 export function getMovies() {
   return fetch(`${BASE_PATH}/movie/now_playing?api_key=${API_KEY}`).then(
+    (response) => response.json()
+  );
+}
+
+export function getTvShows() {
+  return fetch(`${BASE_PATH}/tv/on_the_air?api_key=${API_KEY}`).then(
+    (response) => response.json()
+  );
+}
+
+export function getTopRated() {
+  return fetch(`${BASE_PATH}/movie/top_rated?api_key=${API_KEY}`).then(
+    (response) => response.json()
+  );
+}
+
+export function getUpComming() {
+  return fetch(`${BASE_PATH}/movie/upcoming?api_key=${API_KEY}`).then(
     (response) => response.json()
   );
 }
