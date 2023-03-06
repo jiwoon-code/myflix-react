@@ -90,3 +90,19 @@ export function getUpComming() {
     (response) => response.json()
   );
 }
+
+export async function getSearchResult({
+  keyword,
+  category,
+  page,
+}: {
+  keyword: string | null;
+  category: string;
+  page: number;
+}) {
+  return (
+    await fetch(
+      `${BASE_PATH}/search/${category}?api_key=${API_KEY}&language=en-US&query=${keyword}&page=${page}`
+    )
+  ).json();
+}

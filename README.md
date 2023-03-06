@@ -1,46 +1,11 @@
-# Getting Started with Create React App
+### Reason for Fail
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. fetch를 이용한 api 구현까지 완료 후 각 component들을 만들어 Home.tsx에 넣어 주었지만 Slider와 Overlay사이의 position 문제인지
+   계속 Slider가 겹쳐보였고 Slider마다 스크롤이 생기기 시작했다.
+2. 다 지우고 Home.tsx에서 다시 시작하여 MultipleQuery를 사용하여 여러 data,isLoading을 만들었다. 하지만 그렇게 만들어서 Slider를 붙여 보아도
+   겹쳐보이면서 여러 스크롤이 생기는건 어쩔수 없었다
+3. Position의 absolute와 relative간에서 나오는 css의 문제라 여겨지지만 해결 방안을 찾지 못했고 &:nth-child()로 해당 Slider들의 top값을 큰 폭
+   으로 바꿔주어도 미묘하게만 바뀔뿐 원하는 모양대로 커스텀되지는 않았다
+4. 앞으로 css는 그냥 내가 하고 기능 구현 위주로만 강의를 봐야겠다
+   기능구현이 아닌 css때문에 이렇게 막힐 줄은 몰랐다
+   삽질도 기록해 놓으면 공부가 될 거라 생각한다.

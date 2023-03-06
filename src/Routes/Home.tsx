@@ -5,6 +5,7 @@ import { makeImgPath } from "../Utills";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
+import { TopRated } from "./TopRated";
 
 const Wrapper = styled.div`
   background: black;
